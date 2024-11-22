@@ -61,15 +61,6 @@ router.get('/nutrition', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
-    try {
-        const recipe = await Recipe.findById(req.params.id);
-        if (!recipe) return res.status(404).send({ message: 'Recipe not found' });
-        res.send(recipe);
-    } catch (err) {
-        res.status(400).send({ message: 'Error fetching recipe', error: err.message });
-    }
-});
 
 router.get('/search', async (req, res) => {
     try {
@@ -81,6 +72,5 @@ router.get('/search', async (req, res) => {
         res.status(400).send({ message: 'Error searching recipes', error: err.message });
     }
 });
-
 
 export default router;

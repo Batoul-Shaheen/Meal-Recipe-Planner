@@ -3,7 +3,7 @@ services:
   configserver1:
     image: mongo:latest
     container_name: configserver1
-    command: mongod --configsvr --replSet configReplSet --bind_ip_all --port 27015 # --bind_ip localhost,192.51.100.1
+    command: mongod --configsvr --replSet configReplSet --bind_ip_all --port 27015 
     ports:
       - "27015:27015"
     volumes:
@@ -12,7 +12,7 @@ services:
   configserver2:
     image: mongo:latest
     container_name: configserver2
-    command: mongod --configsvr --replSet configReplSet --bind_ip_all --port 27016 # --bind_ip localhost,192.51.100.1
+    command: mongod --configsvr --replSet configReplSet --bind_ip_all --port 27016 
     ports:
       - "27016:27016"
     volumes:
@@ -21,7 +21,7 @@ services:
   configserver3:
     image: mongo:latest
     container_name: configserver3
-    command: mongod --configsvr --replSet configReplSet --bind_ip_all --port 27017 # --bind_ip localhost,192.51.100.1
+    command: mongod --configsvr --replSet configReplSet --bind_ip_all --port 27017 
     ports:
       - "27017:27017"
     volumes:
